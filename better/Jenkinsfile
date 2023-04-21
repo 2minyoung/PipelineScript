@@ -1,12 +1,12 @@
 pipeline {
     agent any
-    enviroment {
-        DEFAULT_DIR = "/var/betterme/script"
-    }
+    // enviroment {
+    //     DEFAULT_DIR = "/var/betterme/script"
+    // }
     stages {
         stage("Prepare Update") {
             steps {
-                dir("${DEFAULT_DIR}") {
+                dir("/var/betterme/script") {
                     echo "[INFO] Prepare Stage"
                     sh "./prepare_update.sh"
                     echo "Use Node v17"
