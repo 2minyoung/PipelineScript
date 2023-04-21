@@ -15,9 +15,18 @@ pipeline {
         }
         stage("Run Frontend") {
             steps {
-                
-                echo "[INFO] Run Frontend"
-
+                dir("/var/better/script") {
+                    echo "[INFO] Run Frontend"
+                    sh "bash run_frontend.sh"
+                }
+            }
+        }
+        stage("Run Backend") {
+            steps {
+                dir("/var/better/script") {
+                    echo "[INFO] Run Backend"
+                    sh "bash run_backend.sh"
+                }
             }
         }
     }
