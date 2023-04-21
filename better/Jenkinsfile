@@ -7,8 +7,8 @@ pipeline {
         stage("Prepare Update") {
             steps {
                 dir("/var/betterme/script") {
-                    pwd
-                    ls -al
+                    sh "pwd"
+                    sh "ls -al"
                     echo "[INFO] Prepare Stage"
                     sh "bash prepare_update.sh"
                     echo "Use Node v17"
