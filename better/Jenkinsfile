@@ -8,7 +8,7 @@ pipeline {
             steps {
                 dir("/var/better/script") {
                     echo "[INFO] Prepare Stage"
-                    sh "nvm use 17"
+                    sh "bash prepare_update.sh"
                     echo "Use Node v17"
                 }
             }
