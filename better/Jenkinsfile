@@ -8,7 +8,7 @@ pipeline {
             steps {
                 dir("/var/betterme/script") {
                     echo "[INFO] Prepare Stage"
-                    sh "./prepare_update.sh"
+                    sh "bash prepare_update.sh"
                     echo "Use Node v17"
                 }
             }
