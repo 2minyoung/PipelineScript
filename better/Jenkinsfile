@@ -7,10 +7,8 @@ pipeline {
         stage("Prepare Update") {
             steps {
                 dir("/var/better/script") {
-                    sh "pwd"
-                    sh "ls -al"
                     echo "[INFO] Prepare Stage"
-                    sh "use nvm 17"
+                    sh "nvm use 17"
                     echo "Use Node v17"
                 }
             }
