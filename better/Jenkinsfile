@@ -1,9 +1,23 @@
 pipeline {
     agent any
+    enviroment {
+        DEFAULT_DIR = "/var/betterme/script"
+    }
     stages {
-        stage("Test") {
+        stage("Prepare Update") {
+            dir("${DEFAULT_DIR}") {
+                steps {
+                    echo "[INFO] Prepare Stage"
+                    sh "./prepare_update.sh"
+                    echo "Use Node v17"
+                }
+            }
+        }
+        stage("Run Frontend") {
             steps {
-                echo "HELLO SCM PIPE LINE!"
+                
+                echo "[INFO] Run Frontend"
+
             }
         }
     }
