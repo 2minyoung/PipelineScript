@@ -5,8 +5,8 @@ pipeline {
     }
     stages {
         stage("Prepare Update") {
-            dir("${DEFAULT_DIR}") {
-                steps {
+            steps {
+                dir("${DEFAULT_DIR}") {
                     echo "[INFO] Prepare Stage"
                     sh "./prepare_update.sh"
                     echo "Use Node v17"
